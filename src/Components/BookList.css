@@ -8,11 +8,11 @@
 .rowStyle {
     flex: 1;
     justify-content: space-between;
+    border: 1px solid black;
 }
 thead {
     background-color: lightskyblue;
     font-family: sans-serif;
-   
 }
 table {
     border-collapse: collapse;
@@ -23,14 +23,15 @@ table {
 .bookNameHead{
     text-align: center;
     padding: 4px;
+    border: 1px solid black;
 }
 .bookCategoryHead{
     text-align: center;
     padding: 4px;
-
+    border: 1px solid black;
 }
 .bookPriceHead{
     text-align: center;
     padding: 4px;
-
+    border: 1px solid black;
 }
