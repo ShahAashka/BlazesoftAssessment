@@ -1,0 +1,36 @@
+.bookList{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.rowStyle {
+    flex: 1;
+    justify-content: space-between;
+}
+thead {
+    background-color: lightskyblue;
+    font-family: sans-serif;
+   
+}
+table {
+    border-collapse: collapse;
+}
+.headingRow {
+    padding: 12px;
+}
+.bookNameHead{
+    text-align: center;
+    padding: 4px;
+}
+.bookCategoryHead{
+    text-align: center;
+    padding: 4px;
+
+}
+.bookPriceHead{
+    text-align: center;
+    padding: 4px;
+
+}

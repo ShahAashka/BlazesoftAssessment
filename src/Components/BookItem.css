@@ -1,0 +1,21 @@
+.bookName {
+    text-align: left;
+    border: 1px solid black;
+    padding: 4px;
+}
+.bookCategory {
+    text-align: left;
+    border: 1px solid black;
+    padding: 4px;
+}
+.bookPrice{
+    text-align: right;
+    border: 1px solid black;
+    padding: 4px;
+}
+.deleteBook{
+   display: flex;
+   border: 1px solid black;
+   justify-content: flex-end;
+   padding: 4px;
+}
