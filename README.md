@@ -1,4 +1,4 @@
-# Frontend test for Blazesoft
+# Frontend assessment for Blazesoft
 
 ## Requirements
 
@@ -11,7 +11,7 @@
 
 ## Stack
 - Front End: [React](https://reactjs.org/)(Redux,Hooks)
-- UI: [HTML, CSS]
+- UI: [HTML]
 
 
 ## Demo
