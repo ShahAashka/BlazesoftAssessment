@@ -17,11 +17,14 @@ const Header = () => {
         <div className="mainHeaderSection">
             <h2>Blazesoft Bookstore</h2>
             <button className="bookAddingButton" onClick={handleOpen}>Add book</button>
-            <BookDetailsModal 
-                open={open}
-                handleClose={handleClose}
-                buttonText={"Submit"}
-            />
+            {open &&
+                <BookDetailsModal 
+                    open={open}
+                    handleClose={handleClose}
+                    buttonText={"Submit"}
+                    bookDetails={""}
+                />
+            }
         </div>
 
     )

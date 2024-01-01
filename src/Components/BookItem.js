@@ -1,32 +1,48 @@
 import React, {useState} from "react";
-import Modal from "./UtilityComponents/Modal";
 import "./BookItem.css"
 import BookDetailsModal from "./BookDetailsModal";
 
 
-const BookItem = () => {
+const BookItem = (props) => {
+    const { deleteBook, id, name, category, price, description } = props
     const [open, setOpen] = useState(false);
+    const [bookDetails, setBookDetails] = useState("");
     
     const handleClose = () => {
         setOpen(false);
     };
     
     const handleOpen = () => {
+        let bookObj = {
+            id: id,
+            name: name,
+            category: category,
+            price: price,
+            description: description
+        }
+        setBookDetails(bookObj)
         setOpen(true);
     };
+
+    const handleDeleteBook = () => {
+        deleteBook(id)
+    }
     return(
         <tr>
-            <td onClick={handleOpen} className="bookName">Book Name</td>
-            <td className="bookCategory">Book Category</td>
-            <td className="bookPrice">Book Price</td>
+            <td onClick={handleOpen} className="bookName">{name}</td>
+            <td className="bookCategory">{category}</td>
+            <td className="bookPrice">{price}</td>
             <td className="deleteBook">
-                <button className="bookDeleteButton" onClick={() => {alert("clicked Delete")}}>Delete</button>
+                <button className="bookDeleteButton" onClick={handleDeleteBook}>Delete</button>
             </td>
-            <BookDetailsModal 
-                open={open}
-                handleClose={handleClose}
-                buttonText={"Update"}
-            />
+            {open && 
+                <BookDetailsModal 
+                    open={open}
+                    handleClose={handleClose}
+                    buttonText={"Update"}
+                    bookDetails={bookDetails}
+                />
+            }
         </tr>
     )
 }
