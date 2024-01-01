@@ -23,6 +23,7 @@ const BookList = (props) => {
         <>
             <Header />
             <div className="bookList">
+            {bookStore.length > 0 ?
                 <table className="rowStyle">
                     <thead>
                         <tr className="headingRow">
@@ -33,10 +34,10 @@ const BookList = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {bookStore.length > 0 &&
-                        props.bookStore.map((bookItem, key) => {
+                        {props.bookStore.map((bookItem, key) => {
                             return(
                                 <BookItem 
+                                    key={key}
                                     id={bookItem.id}
                                     name={bookItem.name}
                                     category={bookItem.category}
@@ -48,6 +49,9 @@ const BookList = (props) => {
                         })}
                     </tbody>
                 </table>
+            :
+            <h3>Please add books using the Add Book button above</h3>
+            }
             </div>
         </>
     )

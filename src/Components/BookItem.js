@@ -31,7 +31,7 @@ const BookItem = (props) => {
         <tr>
             <td onClick={handleOpen} className="bookName">{name}</td>
             <td className="bookCategory">{category}</td>
-            <td className="bookPrice">{price}</td>
+            <td className="bookPrice">{`${"$"+price}`}</td>
             <td className="deleteBook">
                 <button className="bookDeleteButton" onClick={handleDeleteBook}>Delete</button>
             </td>

@@ -71,26 +71,21 @@ const BookDetailsModal = (props) => {
         <Modal isOpen={open} >
             <div className="modalInnerSection">
                 <form className="bookForm">
-                    <label>
-                        Book Name:
-                        <input defaultValue={bookDetails.name || ""} type="text" onChange={handleBookName}/>
-                    </label>
-                    <label>
-                        Book Category:
-                        <input defaultValue={bookDetails.category || ""} type="text" onChange={handleBookCategory}/>
-                    </label>
-                    <label>
-                        Price:
-                        <input defaultValue={bookDetails.price || ""} type="number" onChange={handleBookPrice}/>
-                    </label>
-                    <label>
-                        Description:
-                        <textarea defaultValue={bookDetails.description || ""} name="bookDescription" rows={5} onChange={handleBookDescription}/>
-                    </label>
+                    <label for="bookName">Book Name:</label>
+                    <input id="bookName" defaultValue={bookName} type="text" onChange={handleBookName}/>
+                    
+                    <label for="bookCategory">Book Category:</label>
+                    <input id="bookCategory" defaultValue={bookCategory} type="text" onChange={handleBookCategory}/>
+                    
+                    <label for="bookPrice">Price:</label>
+                    <input id="bookPrice" defaultValue={bookPrice} type="number" onChange={handleBookPrice}/>
+                    
+                    <label for="bookDescription">Description:</label>
+                    <textarea id="bookDescription" defaultValue={bookDescription} name="bookDescription" rows={5} onChange={handleBookDescription}/>
                 </form>
                 <div className="modalActionButtons">
-                    <button onClick={handleCancel}>Cancel</button>
-                    <button onClick={buttonText == "Submit" ? handleSubmit : handleUpdate}>{buttonText}</button>
+                    <button className="cancelAction" onClick={handleCancel}>Cancel</button>
+                    <button className="submitAction" onClick={buttonText == "Submit" ? handleSubmit : handleUpdate}>{buttonText}</button>
                 </div>
             </div>
         </Modal>

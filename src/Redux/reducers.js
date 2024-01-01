@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = []
+const initialState = [
+    {id: "1", name: "SOLID Principles", category: "Tehcnology", price: "99", description: "SOLID principles of design"},
+    {id: "2", name: "Harry Potter", category: "Fiction", price: "799", description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling."},
+    {id: "3", name: "Pride and Prejudice", category: "Science Fiction", price: "129", description: "Pride and Prejudice is the second novel by English author Jane Austen, published in 1813."},
+    {id: "4", name: "The Girl with the Dragon Tattoo", category: "Psychological Thriller", price: "39", description: "The Girl with the Dragon Tattoo is the first book of the Millennium series."},
+]
 
 const bookReducer = createSlice({
     name: 'bookStore',
