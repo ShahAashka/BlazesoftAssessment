@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState } from "react";
 import Modal from "./UtilityComponents/Modal";
 import "./BookDetailsModal.css"
 import { connect } from "react-redux";
@@ -44,6 +44,10 @@ const BookDetailsModal = (props) => {
     }
 
     const handleSubmit = () => {
+        if(bookName == "" || bookCategory == "" || bookDescription == "" || bookPrice == ""){
+            alert("Please do not leave any fields empty")
+            return;
+        }
         const id = Math.floor(Math.random() * 1000)
         setBookId(id)
         let bookItem = {
@@ -57,6 +61,10 @@ const BookDetailsModal = (props) => {
         handleClose();
     }
     const handleUpdate = () => {
+        if(bookName == "" || bookCategory == "" || bookDescription == "" || bookPrice == ""){
+            alert("Please do not leave any fields empty")
+            return;
+        }
         let bookItem = {
             id: bookId,
             name: bookName,
