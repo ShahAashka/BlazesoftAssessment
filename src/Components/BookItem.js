@@ -20,7 +20,7 @@ const BookItem = () => {
             <td className="bookCategory">Book Category</td>
             <td className="bookPrice">Book Price</td>
             <td className="deleteBook">
-                <button onClick={() => {alert("clicked Delete")}}>Delete</button>
+                <button className="bookDeleteButton" onClick={() => {alert("clicked Delete")}}>Delete</button>
             </td>
             <BookDetailsModal 
                 open={open}

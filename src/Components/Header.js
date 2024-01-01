@@ -16,7 +16,7 @@ const Header = () => {
     return(
         <div className="mainHeaderSection">
             <h2>Blazesoft Bookstore</h2>
-            <button onClick={handleOpen}>Add book</button>
+            <button className="bookAddingButton" onClick={handleOpen}>Add book</button>
             <BookDetailsModal 
                 open={open}
                 handleClose={handleClose}

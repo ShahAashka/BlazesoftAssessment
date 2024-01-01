@@ -14,8 +14,12 @@
     padding: 4px;
 }
 .deleteBook{
-   display: flex;
-   border: 1px solid black;
-   justify-content: flex-end;
-   padding: 4px;
+    border: 1px solid black;
+    text-align: right;
+    padding: 4px;
+}
+.bookDeleteButton{
+    background: lightcoral;
+    padding: 6px;
+    border-radius: 4px;
 }
