@@ -11,7 +11,7 @@
 
 ## Stack
 - Front End: [React](https://reactjs.org/)(Redux,Hooks)
-- UI: [HTML]
+- UI: HTML, CSS
 
 
 ## Demo
