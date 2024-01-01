@@ -2,8 +2,23 @@ import React from "react";
 import BookItem from "./BookItem";
 import "./BookList.css"
 import Header from "./Header";
+import { deleteBook} from "../redux/reducers";
+import { connect } from "react-redux";
 
-const BookList = () => {
+const mapStateToProps = (state) => {
+    return {  
+        bookStore: state,  
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        deleteBook: (id) => dispatch(deleteBook(id))
+    }
+}
+
+const BookList = (props) => {
+    const { bookStore } = props;
     return(
         <>
             <Header />
@@ -18,10 +33,19 @@ const BookList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <BookItem />
-                        <BookItem />
-                        <BookItem />
-                        <BookItem />
+                        {bookStore.length > 0 &&
+                        props.bookStore.map((bookItem, key) => {
+                            return(
+                                <BookItem 
+                                    id={bookItem.id}
+                                    name={bookItem.name}
+                                    category={bookItem.category}
+                                    price={bookItem.price}
+                                    description={bookItem.description}
+                                    deleteBook={props.deleteBook}
+                                />
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
@@ -29,4 +53,4 @@ const BookList = () => {
     )
 }
 
-export default BookList;
+export default connect (mapStateToProps, mapDispatchToProps)(BookList);
