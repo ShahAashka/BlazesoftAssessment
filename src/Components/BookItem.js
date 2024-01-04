@@ -36,12 +36,14 @@ const BookItem = (props) => {
                 <button className="bookDeleteButton" onClick={handleDeleteBook}>Delete</button>
             </td>
             {open && 
-                <BookDetailsModal 
-                    open={open}
-                    handleClose={handleClose}
-                    buttonText={"Update"}
-                    bookDetails={bookDetails}
-                />
+                <td>
+                    <BookDetailsModal 
+                        open={open}
+                        handleClose={handleClose}
+                        buttonText={"Update"}
+                        bookDetails={bookDetails}
+                    />
+                </td>
             }
         </tr>
     )

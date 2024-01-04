@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import Modal from "./UtilityComponents/Modal";
 import "./BookDetailsModal.css"
 import { connect } from "react-redux";
-import { addBook, updateBook } from "../redux/reducers";
+import { addBook, updateBook } from "../Redux/reducer";
 
 const mapStateToProps = (state) => {
     return {
@@ -44,7 +44,7 @@ const BookDetailsModal = (props) => {
     }
 
     const handleSubmit = () => {
-        if(bookName == "" || bookCategory == "" || bookDescription == "" || bookPrice == ""){
+        if(bookName === "" || bookCategory === "" || bookDescription === "" || bookPrice === ""){
             alert("Please do not leave any fields empty")
             return;
         }
@@ -61,7 +61,7 @@ const BookDetailsModal = (props) => {
         handleClose();
     }
     const handleUpdate = () => {
-        if(bookName == "" || bookCategory == "" || bookDescription == "" || bookPrice == ""){
+        if(bookName === "" || bookCategory === "" || bookDescription === "" || bookPrice === ""){
             alert("Please do not leave any fields empty")
             return;
         }
@@ -79,16 +79,16 @@ const BookDetailsModal = (props) => {
         <Modal isOpen={open} >
             <div className="modalInnerSection">
                 <form className="bookForm">
-                    <label for="bookName">Book Name:</label>
+                    <label>Book Name:</label>
                     <input id="bookName" defaultValue={bookName} type="text" onChange={handleBookName}/>
                     
-                    <label for="bookCategory">Book Category:</label>
+                    <label>Book Category:</label>
                     <input id="bookCategory" defaultValue={bookCategory} type="text" onChange={handleBookCategory}/>
                     
-                    <label for="bookPrice">Price:</label>
+                    <label>Price:</label>
                     <input id="bookPrice" defaultValue={bookPrice} type="number" onChange={handleBookPrice}/>
                     
-                    <label for="bookDescription">Description:</label>
+                    <label>Description:</label>
                     <textarea id="bookDescription" defaultValue={bookDescription} name="bookDescription" rows={5} onChange={handleBookDescription}/>
                 </form>
                 <div className="modalActionButtons">

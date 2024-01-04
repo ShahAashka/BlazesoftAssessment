@@ -1,9 +1,9 @@
 import React from "react";
 import BookItem from "./BookItem";
-import "./BookList.css"
-import Header from "./Header";
-import { deleteBook} from "../redux/reducers";
+import { deleteBook} from "../Redux/reducer";
 import { connect } from "react-redux";
+import Header from "./Header";
+import "./BookList.css"
 
 const mapStateToProps = (state) => {
     return {  
@@ -57,4 +57,4 @@ const BookList = (props) => {
     )
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(BookList);
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
