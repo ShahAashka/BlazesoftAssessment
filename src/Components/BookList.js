@@ -2,7 +2,7 @@ import React from "react";
 import BookItem from "./BookItem";
 import "./BookList.css"
 import Header from "./Header";
-import { deleteBook} from "../redux/reducers";
+import { deleteBook} from "../Redux/reducer";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -34,10 +34,10 @@ const BookList = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.bookStore.map((bookItem, key) => {
+                        {props.bookStore.map((bookItem) => {
                             return(
                                 <BookItem 
-                                    key={key}
+                                    key={bookItem.id}
                                     id={bookItem.id}
                                     name={bookItem.name}
                                     category={bookItem.category}
