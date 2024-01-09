@@ -10,7 +10,7 @@
 4. Once clicked delete button, the book should be deleted from the main page.
 
 ## Stack
-- Front End: [React](https://reactjs.org/)(Redux,Hooks)
+- Front End: [React](https://reactjs.org/)(Redux,Hooks) and [Next](https://nextjs.org/)
 - UI: HTML, CSS
 
 
