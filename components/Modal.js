@@ -1,5 +1,5 @@
 import React from "react";
-import "./Modal.css";
+import styles from "../styles/Modal.module.css";
 
 const Modal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
@@ -7,11 +7,11 @@ const Modal = ({ isOpen, onClose, children }) => {
     return (
         <div
             onClick={onClose && onClose}
-            className="modalOuterSection"
+            className={styles.modalOuterSection}
         >
             {children}
         </div>
     );
 };
 
-export default Modal
+export default Modal;
