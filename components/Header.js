@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import BookDetailsModal from "./BookDetailsModal";
-import "./Header.css"
+import styles from "../styles/Header.module.css"
 
 
 const Header = () => {
@@ -14,9 +14,9 @@ const Header = () => {
         setOpen(true);
     };
     return(
-        <div className="mainHeaderSection">
+        <div className={styles.mainHeaderSection}>
             <h2>Blazesoft Bookstore</h2>
-            <button className="bookAddingButton" onClick={handleOpen}>Add book</button>
+            <button className={styles.bookAddingButton} onClick={handleOpen}>Add book</button>
             {open &&
                 <BookDetailsModal 
                     open={open}

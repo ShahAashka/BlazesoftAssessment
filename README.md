@@ -17,26 +17,37 @@
 ## Demo
 https://github.com/ShahAashka/BlazesoftAssessment/assets/35736445/c24e420d-dea8-43e1-a5c2-bbe3ae08ff41
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## **Running the app locally**
 
-In the project directory, you can run:
+### **Prerequisites**
 
-### `npm start`
+1. `node` and `npm` are required to run the app and install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **Steps**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm run build`
+```bash
+git clone https://github.com/ShahAashka//BlazesoftAssessment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install the dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
+
+3. Run on `dev` should start the `next dev` script
+
+```bash
+npm run dev
+```
+
+4. Next.js should automatically open your default browser and navigation to [http://localhost:3000](http://localhost:3000) and render 4 default books
+
+
+## Rendering
+
+The application uses Next.js to utilize server-side rendering rather than CRA's client-side rendering.

@@ -1,0 +1,44 @@
+/* body {
+  margin: 0;
+  font-family: sans-serif;
+} */
+.bookList{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.rowStyle {
+  flex: 1;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.tableHead {
+  background-color: lightskyblue;
+  font-family: sans-serif;
+}
+.rowStyle {
+  border-collapse: collapse;
+}
+.headingRow {
+  padding: 12px;
+}
+.bookNameHead{
+  flex: 3;
+  text-align: center;
+  padding: 4px;
+  border: 1px solid black;
+}
+.bookCategoryHead{
+  flex: 3;
+  text-align: center;
+  padding: 4px;
+  border: 1px solid black;
+}
+.bookPriceHead{
+  flex: 3;
+  text-align: center;
+  padding: 4px;
+  border: 1px solid black;
+}

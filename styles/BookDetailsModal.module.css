@@ -29,7 +29,8 @@
     border-radius: 4px;
     background: orange;
 }
-input {
+
+.bookName .bookCategory .bookPrice .bookDescription{
     margin-top: 4px;
     margin-bottom: 12px;
 }

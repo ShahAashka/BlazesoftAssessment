@@ -1,23 +1,12 @@
 import React,{ useState } from "react";
-import Modal from "./UtilityComponents/Modal";
-import "./BookDetailsModal.css"
-import { connect } from "react-redux";
-import { addBook, updateBook } from "../Redux/reducer";
+import Modal from "./Modal";
+import { useDispatch } from "react-redux";
+import { addBook, updateBook } from "../reducer";
+import styles from "../styles/BookDetailsModal.module.css"
 
-const mapStateToProps = (state) => {
-    return {
-        bookStore: state,
-    };
-};
-  
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addBook: (obj) => dispatch(addBook(obj)),
-        updateBook: (obj) => dispatch(updateBook(obj)),
-    };
-};
 
 const BookDetailsModal = (props) => {
+    const dispatch = useDispatch();
     const {handleClose, open, buttonText, bookDetails} = props;
     const [bookId, setBookId] = useState(bookDetails.id || "")
     const [bookName, setBookName] = useState(bookDetails.name || "");
@@ -57,7 +46,7 @@ const BookDetailsModal = (props) => {
             price: bookPrice,
             description: bookDescription
         }
-        props.addBook(bookItem)
+        dispatch(addBook(bookItem))
         handleClose();
     }
     const handleUpdate = () => {
@@ -72,32 +61,32 @@ const BookDetailsModal = (props) => {
             price: bookPrice,
             description: bookDescription
         }
-        props.updateBook(bookItem)
+        dispatch(updateBook(bookItem))
         handleClose();
     }
     return(
         <Modal isOpen={open} >
-            <div className="modalInnerSection">
-                <form className="bookForm">
+            <div className={styles.modalInnerSection}>
+                <form className={styles.bookForm}>
                     <label htmlFor="bookName">Book Name:</label>
-                    <input id="bookName" defaultValue={bookName} type="text" onChange={handleBookName}/>
+                    <input className={styles.bookName} id="bookName" defaultValue={bookName} type="text" onChange={handleBookName}/>
                     
                     <label htmlFor="bookCategory">Book Category:</label>
-                    <input id="bookCategory" defaultValue={bookCategory} type="text" onChange={handleBookCategory}/>
+                    <input className={styles.bookCategory} id="bookCategory" defaultValue={bookCategory} type="text" onChange={handleBookCategory}/>
                     
                     <label htmlFor="bookPrice">Price:</label>
-                    <input id="bookPrice" defaultValue={bookPrice} type="number" onChange={handleBookPrice}/>
+                    <input className={styles.bookPrice} id="bookPrice" defaultValue={bookPrice} type="number" onChange={handleBookPrice}/>
                     
                     <label htmlFor="bookDescription">Description:</label>
-                    <textarea id="bookDescription" defaultValue={bookDescription} name="bookDescription" rows={5} onChange={handleBookDescription}/>
+                    <textarea className={styles.bookDescription} id="bookDescription" defaultValue={bookDescription} name="bookDescription" rows={5} onChange={handleBookDescription}/>
                 </form>
-                <div className="modalActionButtons">
-                    <button className="cancelAction" onClick={handleCancel}>Cancel</button>
-                    <button className="submitAction" onClick={buttonText == "Submit" ? handleSubmit : handleUpdate}>{buttonText}</button>
+                <div className={styles.modalActionButtons}>
+                    <button className={styles.cancelAction} onClick={handleCancel}>Cancel</button>
+                    <button className={styles.submitAction} onClick={buttonText == "Submit" ? handleSubmit : handleUpdate}>{buttonText}</button>
                 </div>
             </div>
         </Modal>
     )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsModal);;
+export default BookDetailsModal;

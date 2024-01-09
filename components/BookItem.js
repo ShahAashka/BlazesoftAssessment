@@ -1,13 +1,17 @@
 import React, {useState} from "react";
-import "./BookItem.css"
+import { deleteBook } from "../reducer";
+import { useDispatch } from "react-redux";
 import BookDetailsModal from "./BookDetailsModal";
+import styles from "../styles/BookItem.module.css"
 
 
 const BookItem = (props) => {
-    const { deleteBook, id, name, category, price, description } = props
+    const { id, name, category, price, description } = props
     const [open, setOpen] = useState(false);
     const [bookDetails, setBookDetails] = useState("");
     
+    const dispatch = useDispatch();
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -25,15 +29,15 @@ const BookItem = (props) => {
     };
 
     const handleDeleteBook = () => {
-        deleteBook(id)
+        dispatch(deleteBook(id))
     }
     return(
         <tr>
-            <td onClick={handleOpen} className="bookName">{name}</td>
-            <td className="bookCategory">{category}</td>
-            <td className="bookPrice">{`${"$"+price}`}</td>
-            <td className="deleteBook">
-                <button className="bookDeleteButton" onClick={handleDeleteBook}>Delete</button>
+            <td onClick={handleOpen} className={styles.bookName}>{name}</td>
+            <td className={styles.bookCategory}>{category}</td>
+            <td className={styles.bookPrice}>{`${"$"+price}`}</td>
+            <td className={styles.deleteBook}>
+                <button className={styles.bookDeleteButton} onClick={handleDeleteBook}>Delete</button>
             </td>
             {open &&
                 <td>
