@@ -48,6 +48,6 @@ npm run dev
 4. Next.js should automatically open your default browser and navigation to [http://localhost:3000](http://localhost:3000) and render 4 default books
 
 
-## Rendering
+## Public domain URL
 
-The application uses Next.js to utilize server-side rendering rather than CRA's client-side rendering.
+https://shahaashka.github.io/BlazesoftAssessment/
